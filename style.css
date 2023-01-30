@@ -1,0 +1,336 @@
+body {
+	background: #333;
+	margin: 0;
+	overflow: hidden;
+	color: white;
+}
+.container{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+.bgleft,
+.bgright {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 50%;
+	background: #33d;
+}
+
+.bgright {
+	right: 0;
+	background: #73d;
+}
+
+#reset{
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px solid #fff;
+	transform: translate(-50%, 0);
+	font-family: monospace;
+	cursor: pointer;
+	color: #fff;
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.2);
+}
+
+#reset:focus,
+#reset:hover{
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+.imagecontainer {
+	position: absolute;
+	top: 8vh;
+	left: 15vw;
+	height: 40vh;
+	width: 70vw;
+}
+
+img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+	height: auto;
+}
+
+.picborder {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 62vw;
+	height: calc(64vw * 0.63);
+	background: #fff;
+}
+
+.slidercontainer {
+	position: absolute;
+	top: 55vh;
+	left: 5vw;
+	height: 45vh;
+	width: 90vw;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.sliderblock {
+	width: 8vw;
+	padding: 0;
+}
+
+.slider {
+	position: relative;
+	top: calc(20vh - 16px);
+	left: calc(4vw - 10px);
+	width: 20vh;
+	margin: 0;
+	transform: rotate(-90deg);
+	transform-origin: 0 0;
+}
+
+label {
+	position: relative;
+	display: block;
+	font-family: monospace;
+	top: 32vh;
+	height: 8vw;
+	width: 80px;
+	text-align: left;
+	line-height: 8vw;
+	white-space: nowrap;
+	transform-origin: 0 0;
+	transform: rotate(-90deg);
+}
+
+.val {
+	/*display: none;*/
+	position: relative;
+	transform: rotate(0deg);
+	display: block;
+	font-family: monospace;
+	top: calc(42vh - 16px);
+	height: 16px;
+	width: 100%;
+	text-align: center;
+	visibility: hidden;
+}
+
+/*Desktop Stuff i.e. if larger than 900*/
+@media only screen and (min-width: 820px) {
+	.imagecontainer {
+		top: 15vh;
+		left: 30vw;
+		height: 40vh;
+		width: 40vw;
+	}
+	.picborder {
+		width: 37vw;
+		height: calc(38vw * 0.63);
+		background: #fff;
+	}
+
+	.slidercontainer {
+		top: 65vh;
+		left: 10vw;
+		height: 35vh;
+		width: 80vw;
+	}
+
+	.sliderblock {
+		top: 60vh;
+		height: 25vh;
+		width: 8vw;
+		padding: 0;
+	}
+
+	.slider {
+		left: calc(4vw - 10px);
+		width: 20vh;
+		margin: 0;
+		transform: rotate(-90deg);
+		transform-origin: 0 0;
+	}
+
+	label {
+		position: relative;
+		display: block;
+		font-family: monospace;
+		top: 20vh;
+		height: 5vh;
+		width: 100%;
+		text-align: center;
+		line-height: 5vh;
+		white-space: nowrap;
+		transform: rotate(0deg);
+	}
+
+	.val {
+		/*display: none;*/
+		position: relative;
+		transform: rotate(0deg);
+		display: block;
+		font-family: monospace;
+		top: calc(32vh - 16px);
+		height: 16px;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Styling the sliders*/
+input[type="range"] {
+	-webkit-appearance: none;
+	background: transparent;
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+}
+input[type="range"]:focus {
+	outline: none;
+}
+input[type="range"]::-ms-track {
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+
+/*New range styles*/
+input[type="range"]::-webkit-slider-runnable-track {
+	height: 2px;
+	cursor: pointer;
+	background: #fff;
+	margin-top: 10px;
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.2);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	height: 20px;
+	width: 20px;
+	border-radius: 10px;
+	background: #ffffff;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -9px;
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.2);
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+input[type="range"]::-moz-range-track {
+	width: 100%;
+	height: 2px;
+	cursor: pointer;
+	background: #fff;
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.2);
+}
+input[type="range"]::-moz-range-thumb {
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	background: #ffffff;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -9px;
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.2);
+}
+
+input[type="range"]:focus::-moz-range-track {
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+input[type="range"]::-ms-track {
+	width: 100%;
+	height: 2px;
+	cursor: pointer;
+	background: #fff;
+}
+
+input[type="range"]::-ms-thumb {
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	background: #ffffff;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: 0px;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.4);
+}
+input[type="range"]:focus::-ms-fill-upper {
+	box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.4);
+}
+
+/*social*/
+#insta,
+#twit {
+	position: absolute;
+	top: 0;
+	font-size: 20px;
+	margin: 10px;
+	cursor: pointer;
+	color: #fff;
+}
+#twit {
+	right: 0;
+}
+
+
+/*prevent defaults*/
+button,
+p{
+	display: inline-block;
+	border: none;
+	margin: 0;
+	text-decoration: none;
+	padding: 0;
+	background: none;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	overflow: hidden;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+button:focus {
+	outline: none;
+	color: black;
+}
+
+textarea:focus {
+	outline: none;
+}
+select:focus {
+	color: #000;
+}
+a,
+a:link,
+a:visited {
+	color: var(--maincolor);
+}
